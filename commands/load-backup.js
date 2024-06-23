@@ -23,7 +23,7 @@ exports.run = async (client, message, args) => {
             collector.stop();
             if (confirm) {
 
-                backup.load(backupID, message.guild).then(() => {
+                backup.load(backupID, message.guild,{maxMessagesPerChannel: 10000000}).then(() => {
 
                     return message.author.send('Backup loaded successfully!');
             
